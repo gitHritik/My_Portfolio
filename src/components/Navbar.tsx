@@ -1,33 +1,73 @@
-import { Home, Briefcase, Laptop, Mail, Moon } from 'lucide-react';
+import { Home, Briefcase, Laptop, Mail, Moon, Sun } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
+    // Load saved mode from localStorage or default to dark
+    const [darkMode, setDarkMode] = useState(() => {
+        const saved = localStorage.getItem("darkMode");
+        return saved ? JSON.parse(saved) : true;
+    });
+
+    // Apply dark/light mode globally and save to localStorage
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.classList.remove("light");
+        } else {
+            document.documentElement.classList.add("light");
+            document.documentElement.classList.remove("dark");
+        }
+        localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    }, [darkMode]);
+
+    const handleScroll = (id: string) => {
+        const section = document.getElementById(id);
+        const navbarHeight = 60; // match your navbar height
+        if (section) {
+            const yOffset = -navbarHeight;
+            const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
+    };
+
     return (
-        <nav className="sticky top-0 flex justify-between items-center px-8 py-3 bg-gray-950 backdrop-blur-sm border border-gray-800 rounded-2xl">
-            <h1 className="text-base font-medium px-4 py-2 border border-gray-800 rounded-lg">@hritik-chouhan</h1>
+        <nav className="sticky top-2 flex justify-between items-center px-8 py-3 bg-gray-200/30 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-300 dark:border-gray-800 z-50 rounded-2xl mx-31">
+            <a
+                href="https://www.linkedin.com/in/hritik-chouhan-0522051b6"
+                target="_blank"
+                className="flex items-center gap-3"
+            >
+                <h1 className="text-base font-medium px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg text-gray-900 dark:text-white hover:bg-gray-300/50 dark:hover:bg-gray-800/50 transition">
+                    @hritik-chouhan
+                </h1>
+            </a>
 
             <div className="flex items-center gap-2">
-                <a href="#home" className="flex items-center border border-gray-800 gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 transition">
-                    <Home size={18} />
-                    <span>Home</span>
-                </a>
-                <a href="#projects" className="flex items-center border border-gray-800 gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 transition">
-                    <Briefcase size={18} />
-                    <span>Projects</span>
-                </a>
-                <a href="#work" className="flex items-center border border-gray-800 gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 transition">
-                    <Laptop size={18} />
-                    <span>Work</span>
-                </a>
-                <a href="#contact" className="flex items-center border border-gray-800 gap-2 px-4 py-2 rounded-lg hover:bg-gray-800 transition">
-                    <Mail size={18} />
-                    <span>Contact</span>
-                </a>
-                <button className="p-2 border border-gray-800 rounded-lg hover:bg-gray-800 transition ml-2">
-                    <Moon size={18} />
+                {[
+                    { id: "home", label: "Home", icon: <Home size={18} /> },
+                    { id: "projects", label: "Projects", icon: <Briefcase size={18} /> },
+                    { id: "work", label: "Work", icon: <Laptop size={18} /> },
+                    { id: "contact", label: "Contact", icon: <Mail size={18} /> },
+                ].map((item) => (
+                    <button
+                        key={item.id}
+                        onClick={() => handleScroll(item.id)}
+                        className="flex items-center border border-gray-300 dark:border-gray-800 gap-2 px-4 py-2 rounded-lg text-gray-900 dark:text-white hover:bg-gray-300/50 dark:hover:bg-gray-800/50 transition"
+                    >
+                        {item.icon}
+                        <span>{item.label}</span>
+                    </button>
+                ))}
+
+                <button
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="p-2 border border-gray-300 dark:border-gray-800 rounded-lg text-gray-900 dark:text-white hover:bg-gray-300/50 dark:hover:bg-gray-800/50 transition ml-2"
+                >
+                    {darkMode ? <Moon size={18} /> : <Sun size={18} />}
                 </button>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default Navbar;
