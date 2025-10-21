@@ -20,7 +20,7 @@ const Experience = () => {
                                 App Developer
                             </h3>
                             <p className="text-[10px] sm:text-[12px] text-gray-700 dark:text-gray-400 w-full sm:w-[282px]">
-                                Working as an App Developer at Merchant Navy Decoded (India)
+                                Working as an App Developer at Merchant Navy Decoded
                             </p>
                         </div>
                     </div>

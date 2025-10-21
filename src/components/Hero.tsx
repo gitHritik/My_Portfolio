@@ -13,12 +13,12 @@ function Hero() {
 
             {/* Bio */}
             <p className="text-gray-700 dark:text-gray-400 text-sm sm:text-base mb-8 md:mb-10 max-w-4xl leading-relaxed">
-                👋 Hi, I'm <span className="font-semibold">Hritik Chouhan</span>, a passionate developer from India.
-                I specialize in crafting modern, scalable web and mobile applications while exploring
-                the limitless possibilities of AI. Though I don't have formal work experience yet,
-                I've worked as a freelancer and built <span className="font-semibold">10+ real-world projects</span>
-                that sharpened my skills and creativity.
+                👋 Hi, I'm <span className="font-semibold">Hritik Chouhan</span>, a dedicated developer from India.
+                I craft modern, scalable web and mobile applications and explore innovative AI solutions.
+                With hands-on experience building <span className="font-semibold">10+ real-world projects</span>,
+                I thrive on turning ideas into fully functional products that deliver seamless user experiences.
             </p>
+
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl border-t border-gray-300 dark:border-gray-700 pt-4">

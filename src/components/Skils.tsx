@@ -4,23 +4,28 @@ const Skills = () => {
             "React.js", "React Native", "Tailwind CSS", "Node.js",
             "MySQL", "MongoDB", "NativeWind", "Expo",
             "Chrome Extension", "Vercel", "Stripe", "Express",
-            "HTML", "CSS", "JavaScript", "TypeScript"
+            "HTML", "CSS", "JavaScript", "TypeScript",
+            "Git", "GitHub"
         ],
         "AI": [
             "ChatGPT", "Claude", "Gemini"
+        ],
+        "Design & Multimedia": [
+            "UI Design", "UX Design", "Canva", "Video Editing"
         ]
     };
 
     return (
-        <section className=" sm:ml-2 sm:mr-6 md:ml-8 md:mr-10 px-2 sm:px-6 md:px-10">
+        <section className="sm:ml-2 sm:mr-6 md:ml-8 md:mr-10 px-2 sm:px-6 md:px-10">
             {Object.entries(skillCategories).map(([category, skills]) => (
                 <div key={category} className="mb-8 sm:mb-10">
                     <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-gray-900 dark:text-white">
                         {category === "Full Stack" && "💻"}
                         {category === "AI" && "🧠"}
+                        {category === "Design & Multimedia" && "🎨"}
                         <span>{category}</span>
                     </h3>
-                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-start sm:justify-start md:justify-start">
+                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-start">
                         {skills.map((skill) => (
                             <span
                                 key={skill}
