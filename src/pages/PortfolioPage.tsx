@@ -13,14 +13,14 @@ function PortfolioPage() {
             <Navbar />
 
             {/* Main layout */}
-            <div className="max-w-6xl mx-auto px-6 flex gap-10 pt-6">
+            <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-10 pt-20">
                 {/* Sidebar */}
-                <aside className="w-80 sticky top-24 self-start h-fit">
+                <aside className="w-full md:w-80 md:sticky md:top-24 self-start h-fit order-1 md:order-none">
                     <Sidebar />
                 </aside>
 
                 {/* Main content */}
-                <main className="flex-1 flex flex-col gap-16">
+                <main className="flex-1 flex flex-col gap-16 order-2">
                     <Hero />
                     <Skills />
                     <Projects />
