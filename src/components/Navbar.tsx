@@ -5,7 +5,7 @@ const Navbar = () => {
     // Load saved mode from localStorage or default to dark
     const [darkMode, setDarkMode] = useState(() => {
         const saved = localStorage.getItem("darkMode");
-        return saved ? JSON.parse(saved) : true;
+        return saved ? saved === "true" : true;
     });
 
     // Apply dark/light mode globally and save to localStorage
@@ -17,12 +17,12 @@ const Navbar = () => {
             document.documentElement.classList.add("light");
             document.documentElement.classList.remove("dark");
         }
-        localStorage.setItem("darkMode", JSON.stringify(darkMode));
+        localStorage.setItem("darkMode", darkMode.toString());
     }, [darkMode]);
 
     const handleScroll = (id: string) => {
         const section = document.getElementById(id);
-        const navbarHeight = 60; // match your navbar height
+        const navbarHeight = 80;
         if (section) {
             const yOffset = -navbarHeight;
             const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -31,7 +31,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="sticky top-2 flex justify-between items-center px-8 py-3 bg-gray-200/30 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-300 dark:border-gray-800 z-50 rounded-2xl mx-31">
+        <nav className="sticky top-0 flex justify-between items-center px-8 py-3 bg-gray-200/30 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-300 dark:border-gray-800 z-50 rounded-2xl mx-31">
             <a
                 href="https://www.linkedin.com/in/hritik-chouhan-0522051b6"
                 target="_blank"
@@ -61,7 +61,7 @@ const Navbar = () => {
 
                 <button
                     onClick={() => setDarkMode(!darkMode)}
-                    className="p-2 border border-gray-300 dark:border-gray-800 rounded-lg text-gray-900 dark:text-white hover:bg-gray-300/50 dark:hover:bg-gray-800/50 transition ml-2"
+                    className="p-2 border border-gray-300 cursor-pointer dark:border-gray-800 rounded-lg text-gray-900 dark:text-white hover:bg-gray-300/50 dark:hover:bg-gray-800/50 transition ml-2"
                 >
                     {darkMode ? <Moon size={18} /> : <Sun size={18} />}
                 </button>

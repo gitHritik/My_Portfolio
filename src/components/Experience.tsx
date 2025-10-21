@@ -20,7 +20,7 @@ const Experience = () => {
                                 <h3 className="text-base font-semibold text-gray-900 dark:text-white">
                                     App Developer
                                 </h3>
-                                <p className="text-[12px] text-gray-700 dark:text-gray-400">
+                                <p className="text-[12px] text-gray-700 dark:text-gray-400 w-[282px]">
                                     Working as an App Developer at Merchant Navy Decoded (India)
                                 </p>
                             </div>
@@ -41,7 +41,7 @@ const Experience = () => {
                                 <h3 className="text-base font-semibold text-gray-900 dark:text-white">
                                     Freelance Developer
                                 </h3>
-                                <p className="text-[12px] text-gray-700 dark:text-gray-400">
+                                <p className="text-[12px] text-gray-700 dark:text-gray-400 w-[282px]">
                                     Worked as a Full Stack Developer for multiple freelance clients (Remote)
                                 </p>
                             </div>
@@ -62,7 +62,7 @@ const Experience = () => {
                                 <h3 className="text-base font-semibold text-gray-900 dark:text-white">
                                     Quantum University
                                 </h3>
-                                <p className="text-[12px] text-gray-700 dark:text-gray-400">
+                                <p className="text-[12px] text-gray-700 dark:text-gray-400 w-[282px]">
                                     Bachelor of Engineering in Computer Science
                                 </p>
                             </div>
