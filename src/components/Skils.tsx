@@ -12,7 +12,7 @@ const Skills = () => {
     };
 
     return (
-        <section className="mr-4 sm:ml-2 sm:mr-6 md:ml-8 md:mr-10 px-2 sm:px-6 md:px-10">
+        <section className=" sm:ml-2 sm:mr-6 md:ml-8 md:mr-10 px-2 sm:px-6 md:px-10">
             {Object.entries(skillCategories).map(([category, skills]) => (
                 <div key={category} className="mb-8 sm:mb-10">
                     <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-gray-900 dark:text-white">

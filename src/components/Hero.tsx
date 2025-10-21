@@ -1,6 +1,6 @@
 function Hero() {
     return (
-        <section id="home" className="md:ml-4 mr-4 mt-4 px-4 sm:px-1 md:px-10 py-4">
+        <section id="home" className="md:ml-4 md:mr-4 mt-4 px-4 sm:px-1 md:px-10 py-4">
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-5 leading-tight text-gray-900 dark:text-white">
                 Building the Future of Web, Mobile & AI

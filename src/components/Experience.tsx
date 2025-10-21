@@ -2,7 +2,7 @@ import { Calendar, Code2, Laptop, GraduationCap } from "lucide-react";
 
 const Experience = () => {
     return (
-        <section id="work" className="mr-4 sm:ml-6 sm:mr-6 md:ml-10 md:mr-10 px-2 sm:px-6 md:px-10">
+        <section id="work" className=" sm:ml-6 sm:mr-6 md:ml-10 md:mr-10 px-2 sm:px-6 md:px-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-10 text-gray-900 dark:text-white">
                 Education & Work Experience
             </h2>
